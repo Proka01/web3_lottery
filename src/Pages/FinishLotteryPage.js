@@ -63,7 +63,7 @@ const pickWinner = async () => {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
     const contractIns = new ethers.Contract(constants.contractAddress, constants.contractAbi, signer);
-
+    
     const tx = await contractIns.pickWinner();
     await tx.wait();
 
